@@ -97,7 +97,7 @@ const timeline = [
   {
     step: '01',
     title: 'Imprevisto surge',
-    text: 'A Terevita entra como proteção quando algo tira o cliente do ritmo normal da vida.',
+    text: 'A Terevita atua como corretora especializada em seguro de vida e planejamento financeiro, garantindo proteção estruturada para preservar sua estabilidade mesmo diante de imprevistos.',
   },
   {
     step: '02',
@@ -118,7 +118,7 @@ const faq = [
   },
   {
     q: 'Para quem a Terevita faz sentido?',
-    a: 'Para quem quer organizar proteção com clareza, sem excesso de burocracia, e precisa de uma proposta alinhada ao próprio momento de vida.',
+    a: 'A Terevita é para quem valoriza um planejamento financeiro bem estruturado, com proteção inteligente, claro nas decisões e soluções sob medida para cada fase da vida.',
   },
   {
     q: 'Como funciona o atendimento?',
@@ -307,28 +307,15 @@ export function TerevitaLanding() {
       </header>
 
       <section id="inicio" className="scroll-mt-28 overflow-hidden pt-28 lg:pt-32">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-14 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:px-10">
-          <div className="relative order-2 lg:order-1">
-            <div className="inline-flex rounded-full border border-[#d7c39b] bg-white/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#8b6f41] shadow-sm">
-              Proposta comercial, sem ruído técnico
-            </div>
-
-            <h1 className={`${serif.className} mt-6 max-w-2xl text-4xl leading-[0.96] text-[#3f1d08] md:text-5xl lg:text-[4.7rem]`}>
-              Proteção inteligente para quem cuida do futuro da família.
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-14 lg:grid-cols-[1fr_1fr] lg:items-start lg:px-10">
+          <div className="relative order-2 lg:order-1 flex flex-col justify-start">
+            <h1 className={`${serif.className} mt-6 max-w-2xl text-3xl leading-[0.9] text-[#3f1d08] md:text-4xl lg:text-[4rem]`}>
+              Seguro de vida estratégico para proteção familiar, garantindo estabilidade financeira, sucessão patrimonial e tranquilidade para quem você ama.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#5d4c3f]">
-              Uma experiência comercial mais humana, elegante e objetiva para apresentar coberturas com clareza e transformar interesse em proposta.
+              Uma experiência de consultoria em seguro de vida pensada para quem valoriza clareza, estratégia e sofisticação na construção de um planejamento financeiro sólido e na proteção da família.
             </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#contato" className="rounded-[18px] border border-[#8f6330] bg-[#f5ead9] px-9 py-3.5 text-lg font-bold text-[#2c180c] shadow-[0_12px_28px_-14px_rgba(75,30,10,0.45)] transition hover:bg-[#ecdbc1]">
-                Receber minha proposta
-              </a>
-              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="rounded-[18px] border border-[#c6ad7d] bg-white/75 px-8 py-3.5 text-lg font-semibold text-[#5b482f] transition hover:bg-white">
-                Falar com consultor
-              </a>
-            </div>
 
             <div className="mt-10 hidden h-14 w-[340px] md:block">
               <svg viewBox="0 0 340 56" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -337,37 +324,41 @@ export function TerevitaLanding() {
             </div>
           </div>
 
-          <div className="relative order-1 mx-auto w-full max-w-[860px] lg:order-2">
-            <div className="absolute -right-3 top-14 h-36 w-36 rounded-[34%] bg-[#efc57a]/70" />
-            <div className="absolute left-[42%] bottom-0 h-32 w-32 rounded-full border border-[#e8b08e] bg-[#f7c6a2]/45" />
+          <div className="relative order-1 lg:order-2 flex flex-col gap-8">
+            <div className="relative overflow-hidden rounded-[34px] border border-[#e0cfaf] bg-[#f0e4d1] p-3 shadow-[0_24px_60px_-32px_rgba(78,61,24,0.6)]">
+              <Image
+                src="/terevita/arvore-seguranca.jpeg"
+                alt="Árvore da segurança Terevita"
+                width={1200}
+                height={900}
+                priority
+                className="h-full w-full rounded-[26px] object-cover object-center"
+              />
+              <div className="absolute right-5 top-5 rounded-full border border-white/60 bg-white/85 p-2 shadow-md">
+                <Image src="/terevita/logo-terevita.jpeg" alt="Logo Terevita" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
+              </div>
+            </div>
 
-            <div className="relative grid gap-5 lg:grid-cols-[1fr_0.3fr] lg:items-center">
-              <div className="relative overflow-hidden rounded-[34px] border border-[#e0cfaf] bg-[#f0e4d1] p-3 shadow-[0_24px_60px_-32px_rgba(78,61,24,0.6)]">
-                <Image
-                  src="/terevita/arvore-seguranca.jpeg"
-                  alt="Árvore da segurança Terevita"
-                  width={1200}
-                  height={900}
-                  priority
-                  className="h-full w-full rounded-[26px] object-cover object-center"
-                />
-                <div className="absolute right-5 top-5 rounded-full border border-white/60 bg-white/85 p-2 shadow-md">
-                  <Image src="/terevita/logo-terevita.jpeg" alt="Logo Terevita" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
+            <div className="grid gap-4 grid-cols-3">
+              {[
+                ['100%', 'clareza comercial'],
+                ['+20', 'coberturas do portfólio'],
+                ['24h', 'retorno inicial'],
+              ].map(([value, label]) => (
+                <div key={value} className="rounded-[30px] border border-[#d9c6a1] bg-white/85 p-5 shadow-[0_14px_30px_-20px_rgba(66,44,18,0.5)]">
+                  <p className={`${serif.className} text-3xl text-[#4a260f]`}>{value}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#7d6745]">{label}</p>
                 </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="grid gap-4">
-                {[
-                  ['100%', 'clareza comercial'],
-                  ['+20', 'coberturas do portfólio'],
-                  ['24h', 'retorno inicial'],
-                ].map(([value, label]) => (
-                  <div key={value} className="rounded-[30px] border border-[#d9c6a1] bg-white/85 p-5 shadow-[0_14px_30px_-20px_rgba(66,44,18,0.5)]">
-                    <p className={`${serif.className} text-4xl text-[#4a260f]`}>{value}</p>
-                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#7d6745]">{label}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-3">
+              <a href="#contato" className="rounded-[18px] border border-[#8f6330] bg-[#f5ead9] px-9 py-3.5 text-lg font-bold text-[#2c180c] shadow-[0_12px_28px_-14px_rgba(75,30,10,0.45)] transition hover:bg-[#ecdbc1]">
+                Receber minha proposta
+              </a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="rounded-[18px] border border-[#c6ad7d] bg-white/75 px-8 py-3.5 text-lg font-semibold text-[#5b482f] transition hover:bg-white">
+                Falar com consultor
+              </a>
             </div>
           </div>
         </div>
@@ -386,9 +377,6 @@ export function TerevitaLanding() {
             <h2 className={`${serif.className} mt-2 text-4xl text-[#3f2917] md:text-5xl`}>
               Um posicionamento mais humano, mais claro e mais fácil de vender.
             </h2>
-            <p className="mt-4 text-base leading-8 text-[#625243]">
-              A landing foi pensada para representar a Terevita, não o CRM. O CRM só entra no fluxo de backend, para armazenar e distribuir os leads.
-            </p>
           </div>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -412,9 +400,6 @@ export function TerevitaLanding() {
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8f7445]">Coberturas</p>
               <h2 className={`${serif.className} mt-2 text-4xl text-[#3f2917] md:text-5xl`}>Uma vitrine de proteção com linguagem visual forte.</h2>
             </div>
-            <p className="max-w-2xl text-sm leading-7 text-[#645548] md:text-base">
-              O conteúdo e as imagens reforçam o que a Terevita vende: segurança, previsibilidade e cuidado em momentos de incerteza.
-            </p>
           </div>
 
           <div className="mt-8">
@@ -535,9 +520,7 @@ export function TerevitaLanding() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 rounded-2xl border border-white/10 bg-[#4a3b2c] px-4 py-4 text-sm leading-7 text-[#f2e6d0]">
-              A abordagem é consultiva, com leitura de perfil e proposta objetiva. Nada de roteiro fechado ou excesso de ruído.
-            </div>
+
           </aside>
         </div>
       </section>
