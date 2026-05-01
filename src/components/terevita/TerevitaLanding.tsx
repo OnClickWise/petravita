@@ -96,18 +96,33 @@ const coverageOptions = portfolioCards.map((card) => card.title);
 const timeline = [
   {
     step: '01',
-    title: 'Imprevisto surge',
-    text: 'A Terevita atua como corretora especializada em seguro de vida e planejamento financeiro, garantindo proteção estruturada para preservar sua estabilidade mesmo diante de imprevistos.',
+    title: 'Entendimento Pessoal',
+    text: 'Compreendemos sua história, valores e objetivos.',
   },
   {
     step: '02',
-    title: 'Cobertura responde',
-    text: 'Seguro, renda ou assistência ajudam a atravessar o período sem desmontar a operação financeira.',
+    title: 'Diagnóstico Financeiro',
+    text: 'Mapeamos patrimônio, renda, riscos e prioridades.',
   },
   {
     step: '03',
-    title: 'Família preservada',
-    text: 'O que estava planejado continua em pé, com mais previsibilidade e menos ruído.',
+    title: 'Análise Estratégica',
+    text: 'Identificamos vulnerabilidades e oportunidades.',
+  },
+  {
+    step: '04',
+    title: 'Estruturação do Plano',
+    text: 'Desenhamos soluções sob medida para proteção e crescimento.',
+  },
+  {
+    step: '05',
+    title: 'Implementação',
+    text: 'Colocamos o planejamento em prática com clareza e segurança.',
+  },
+  {
+    step: '06',
+    title: 'Acompanhamento Contínuo',
+    text: 'Revisamos periodicamente sua estratégia conforme a vida evolui.',
   },
 ];
 
@@ -118,7 +133,7 @@ const faq = [
   },
   {
     q: 'Para quem a Terevita faz sentido?',
-    a: 'A Terevita é para quem valoriza um planejamento financeiro bem estruturado, com proteção inteligente, claro nas decisões e soluções sob medida para cada fase da vida.',
+    a: 'Para quem quer organizar proteção com clareza, sem excesso de burocracia, e precisa de uma proposta alinhada ao próprio momento de vida.',
   },
   {
     q: 'Como funciona o atendimento?',
@@ -184,6 +199,7 @@ export function TerevitaLanding() {
   const [error, setError] = useState('');
   const [activeSection, setActiveSection] = useState<(typeof navItems)[number]['id']>('inicio');
   const [showTopButton, setShowTopButton] = useState(false);
+  
   useEffect(() => {
     let mounted = true;
 
@@ -307,15 +323,30 @@ export function TerevitaLanding() {
       </header>
 
       <section id="inicio" className="scroll-mt-28 overflow-hidden pt-28 lg:pt-32">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-14 lg:grid-cols-[1fr_1fr] lg:items-start lg:px-10">
-          <div className="relative order-2 lg:order-1 flex flex-col justify-start">
-            <h1 className={`${serif.className} mt-6 max-w-2xl text-3xl leading-[0.9] text-[#3f1d08] md:text-4xl lg:text-[4rem]`}>
-              Seguro de vida estratégico para proteção familiar, garantindo estabilidade financeira, sucessão patrimonial e tranquilidade para quem você ama.
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-14 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:px-10">
+          <div className="relative order-2 lg:order-1">
+            <div className="inline-flex rounded-full border border-[#d7c39b] bg-white/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#8b6f41] shadow-sm">
+              Planejamento Financeiro 360º
+            </div>
+
+            <h1 className={`${serif.className} mt-6 max-w-2xl text-4xl leading-[0.96] text-[#3f1d08] md:text-5xl lg:text-[4.7rem]`}>
+              Transformando patrimônio em legado.
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[#5d4c3f]">
-              Uma experiência de consultoria em seguro de vida pensada para quem valoriza clareza, estratégia e sofisticação na construção de um planejamento financeiro sólido e na proteção da família.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5d4c3f]">
+              Na TEREVITA, entendemos que patrimônio não se resume a números. Ele representa anos de trabalho, escolhas, renúncias e sonhos construídos ao longo da vida. Nosso propósito é transformar essas conquistas em segurança duradoura para você e para quem mais importa.
+              <br /><br />
+              Criamos estratégias personalizadas para proteger seu padrão de vida, preservar seu patrimônio e garantir que imprevistos não interrompam os planos da sua família.
             </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#contato" className="rounded-[18px] border border-[#8f6330] bg-[#f5ead9] px-9 py-3.5 text-lg font-bold text-[#2c180c] shadow-[0_12px_28px_-14px_rgba(75,30,10,0.45)] transition hover:bg-[#ecdbc1]">
+                Receber minha proposta
+              </a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="rounded-[18px] border border-[#c6ad7d] bg-white/75 px-8 py-3.5 text-lg font-semibold text-[#5b482f] transition hover:bg-white">
+                Falar com consultor
+              </a>
+            </div>
 
             <div className="mt-10 hidden h-14 w-[340px] md:block">
               <svg viewBox="0 0 340 56" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -324,41 +355,37 @@ export function TerevitaLanding() {
             </div>
           </div>
 
-          <div className="relative order-1 lg:order-2 flex flex-col gap-8">
-            <div className="relative overflow-hidden rounded-[34px] border border-[#e0cfaf] bg-[#f0e4d1] p-3 shadow-[0_24px_60px_-32px_rgba(78,61,24,0.6)]">
-              <Image
-                src="/terevita/arvore-seguranca.jpeg"
-                alt="Árvore da segurança Terevita"
-                width={1200}
-                height={900}
-                priority
-                className="h-full w-full rounded-[26px] object-cover object-center"
-              />
-              <div className="absolute right-5 top-5 rounded-full border border-white/60 bg-white/85 p-2 shadow-md">
-                <Image src="/terevita/logo-terevita.jpeg" alt="Logo Terevita" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
-              </div>
-            </div>
+          <div className="relative order-1 mx-auto w-full max-w-[860px] lg:order-2">
+            <div className="absolute -right-3 top-14 h-36 w-36 rounded-[34%] bg-[#efc57a]/70" />
+            <div className="absolute left-[42%] bottom-0 h-32 w-32 rounded-full border border-[#e8b08e] bg-[#f7c6a2]/45" />
 
-            <div className="grid gap-4 grid-cols-3">
-              {[
-                ['100%', 'clareza comercial'],
-                ['+20', 'coberturas do portfólio'],
-                ['24h', 'retorno inicial'],
-              ].map(([value, label]) => (
-                <div key={value} className="rounded-[30px] border border-[#d9c6a1] bg-white/85 p-5 shadow-[0_14px_30px_-20px_rgba(66,44,18,0.5)]">
-                  <p className={`${serif.className} text-3xl text-[#4a260f]`}>{value}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#7d6745]">{label}</p>
+            <div className="relative grid gap-5 lg:grid-cols-[1fr_0.3fr] lg:items-center">
+              <div className="relative overflow-hidden rounded-[34px] border border-[#e0cfaf] bg-[#f0e4d1] p-3 shadow-[0_24px_60px_-32px_rgba(78,61,24,0.6)]">
+                <Image
+                  src="/terevita/arvore-seguranca.jpeg"
+                  alt="Árvore da segurança Terevita"
+                  width={1200}
+                  height={900}
+                  priority
+                  className="h-full w-full rounded-[26px] object-cover object-center"
+                />
+                <div className="absolute right-5 top-5 rounded-full border border-white/60 bg-white/85 p-2 shadow-md">
+                  <Image src="/terevita/logo-terevita.jpeg" alt="Logo Terevita" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
                 </div>
-              ))}
-            </div>
+              </div>
 
-            <div className="flex flex-wrap gap-3">
-              <a href="#contato" className="rounded-[18px] border border-[#8f6330] bg-[#f5ead9] px-9 py-3.5 text-lg font-bold text-[#2c180c] shadow-[0_12px_28px_-14px_rgba(75,30,10,0.45)] transition hover:bg-[#ecdbc1]">
-                Receber minha proposta
-              </a>
-              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="rounded-[18px] border border-[#c6ad7d] bg-white/75 px-8 py-3.5 text-lg font-semibold text-[#5b482f] transition hover:bg-white">
-                Falar com consultor
-              </a>
+              <div className="grid gap-4">
+                {[
+                  ['100%', 'clareza comercial'],
+                  ['+20', 'coberturas do portfólio'],
+                  ['24h', 'retorno inicial'],
+                ].map(([value, label]) => (
+                  <div key={value} className="rounded-[30px] border border-[#d9c6a1] bg-white/85 p-5 shadow-[0_14px_30px_-20px_rgba(66,44,18,0.5)]">
+                    <p className={`${serif.className} text-4xl text-[#4a260f]`}>{value}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#7d6745]">{label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -372,21 +399,46 @@ export function TerevitaLanding() {
 
       <section id="protecao" className="scroll-mt-28 border-y border-[#dcc8a0] bg-[#efe4cf] px-5 py-16 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8f7445]">Proteção</p>
+          <div className="max-w-4xl">
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8f7445]">Conceito</p>
             <h2 className={`${serif.className} mt-2 text-4xl text-[#3f2917] md:text-5xl`}>
-              Um posicionamento mais humano, mais claro e mais fácil de vender.
+              O Conceito TEREVITA
             </h2>
+            <div className="mt-6 space-y-4 text-base leading-8 text-[#625243]">
+              <p>
+                Acreditamos que planejamento financeiro é uma das maiores expressões de cuidado e responsabilidade. Mais do que organizar recursos, trata-se de proteger histórias, pessoas e futuros.
+              </p>
+              <p>
+                Atuamos como <strong className="font-semibold text-[#3f2917]">arquitetos da sua segurança financeira</strong>: planejamos estruturas sólidas para que, diante das mudanças da vida, você tenha estabilidade, proteção e direção.
+              </p>
+              <p>
+                Sob a liderança de <strong className="font-semibold text-[#3f2917]">Wallace Guedes</strong>, corretor habilitado pela SUSEP e certificado CPA-10, unimos visão técnica, sensibilidade humana e atendimento próximo para transformar complexidade em clareza.
+              </p>
+            </div>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
             {[
-              'Proteção de vida para família e dependentes',
-              'Renda e invalidez com abordagem consultiva',
-              'Doenças graves, internação e assistência',
-            ].map((text) => (
-              <div key={text} className="rounded-[28px] border border-[#d5bf90] bg-white/80 p-6 shadow-sm">
-                <p className="text-lg font-semibold text-[#3f2a17]">{text}</p>
+              {
+                title: 'Proteção do Padrão de Vida',
+                desc: 'Estruturamos soluções para que sua família mantenha estabilidade, dignidade e tranquilidade mesmo diante de afastamentos, doenças ou perda de renda.'
+              },
+              {
+                title: 'Educação dos Filhos',
+                desc: 'O conhecimento é um dos maiores legados que se pode deixar. Protegemos o projeto educacional dos seus filhos contra os imprevistos da vida.'
+              },
+              {
+                title: 'Aposentadoria e Acumulação Patrimonial',
+                desc: 'Planejamos a construção de capital com inteligência tributária e visão de longo prazo, para que a maturidade seja vivida com independência e liberdade.'
+              },
+              {
+                title: 'Planejamento Sucessório e Blindagem Patrimonial',
+                desc: 'Reduzimos impactos de inventário, burocracias e custos tributários, preservando o patrimônio construído ao longo de décadas.'
+              }
+            ].map((pillar) => (
+              <div key={pillar.title} className="rounded-[28px] border border-[#d5bf90] bg-white/80 p-6 shadow-sm">
+                <h3 className={`${serif.className} text-2xl text-[#3f2a17]`}>{pillar.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#625243]">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -400,6 +452,9 @@ export function TerevitaLanding() {
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8f7445]">Coberturas</p>
               <h2 className={`${serif.className} mt-2 text-4xl text-[#3f2917] md:text-5xl`}>Uma vitrine de proteção com linguagem visual forte.</h2>
             </div>
+            <p className="max-w-2xl text-sm leading-7 text-[#645548] md:text-base">
+              O conteúdo e as imagens reforçam o que a Terevita vende: segurança, previsibilidade e cuidado em momentos de incerteza.
+            </p>
           </div>
 
           <div className="mt-8">
@@ -411,9 +466,12 @@ export function TerevitaLanding() {
       <section id="jornada" className="scroll-mt-28 border-y border-[#dcc8a0] bg-[#f1e6d1] px-5 py-16 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8f7445]">Jornada</p>
-          <h2 className={`${serif.className} mt-2 text-4xl text-[#3f2917] md:text-5xl`}>O imprevisto não avisa. A estrutura precisa estar pronta.</h2>
+          <h2 className={`${serif.className} mt-2 text-4xl text-[#3f2917] md:text-5xl`}>A Metodologia TEREVITA</h2>
+          <p className="mt-4 text-base leading-8 text-[#625243]">
+            Nosso processo é consultivo, criterioso e totalmente personalizado.
+          </p>
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {timeline.map((item) => (
               <div key={item.step} className="rounded-[30px] border border-[#d5bf90] bg-white/80 p-6 shadow-sm">
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8f7445]">{item.step}</p>
@@ -421,6 +479,35 @@ export function TerevitaLanding() {
                 <p className="mt-3 text-sm leading-7 text-[#625243]">{item.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="especialista" className="px-5 py-16 lg:px-10 bg-[#f9f4ec]">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className={`${serif.className} text-4xl text-[#3f2917] md:text-5xl`}>
+            Por que contar com um especialista?
+          </h2>
+          <div className="mt-8 space-y-6 text-lg leading-8 text-[#625243]">
+            <p>
+              Grandes decisões financeiras nem sempre são tomadas apenas com lógica. Emoções, urgências e falta de informação podem gerar perdas silenciosas.
+            </p>
+            <p>
+              Ter ao seu lado um especialista significa antecipar riscos, aproveitar oportunidades e tomar decisões com serenidade. Especialmente em momentos de mudanças tributárias e sucessórias, planejamento não é luxo — é inteligência.
+            </p>
+          </div>
+          
+          <div className="mx-auto mt-12 max-w-2xl rounded-3xl bg-[#3b2e22] px-6 py-10 text-center shadow-lg md:px-12">
+            <h3 className={`${serif.className} text-3xl tracking-widest text-[#f4ebd8]`}>
+              TEREVITA
+            </h3>
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#d9c08a] md:flex-row md:gap-6">
+              <p>Protegemos o presente.</p>
+              <span className="hidden md:block">•</span>
+              <p>Organizamos o futuro.</p>
+              <span className="hidden md:block">•</span>
+              <p>Preservamos o seu legado.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -520,7 +607,9 @@ export function TerevitaLanding() {
                 </div>
               ))}
             </div>
-
+            <div className="mt-6 rounded-2xl border border-white/10 bg-[#4a3b2c] px-4 py-4 text-sm leading-7 text-[#f2e6d0]">
+              A abordagem é consultiva, com leitura de perfil e proposta objetiva. Nada de roteiro fechado ou excesso de ruído.
+            </div>
           </aside>
         </div>
       </section>
@@ -649,4 +738,4 @@ export function TerevitaLanding() {
       </div>
     </main>
   );
-}
+} 
