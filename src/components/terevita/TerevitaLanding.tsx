@@ -199,7 +199,7 @@ export function TerevitaLanding() {
   const [error, setError] = useState('');
   const [activeSection, setActiveSection] = useState<(typeof navItems)[number]['id']>('inicio');
   const [showTopButton, setShowTopButton] = useState(false);
-  
+
   useEffect(() => {
     let mounted = true;
 
@@ -450,10 +450,10 @@ export function TerevitaLanding() {
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8f7445]">Coberturas</p>
-              <h2 className={`${serif.className} mt-2 text-4xl text-[#3f2917] md:text-5xl`}>Uma vitrine de proteção com linguagem visual forte.</h2>
+              <h2 className={`${serif.className} mt-2 text-4xl text-[#3f2917] md:text-5xl`}>Um portfólio estruturado para a sua segurança.</h2>
             </div>
             <p className="max-w-2xl text-sm leading-7 text-[#645548] md:text-base">
-              O conteúdo e as imagens reforçam o que a Terevita vende: segurança, previsibilidade e cuidado em momentos de incerteza.
+              Conheça nossas soluções completas e descubra como podemos garantir previsibilidade e cuidado para você e sua família.
             </p>
           </div>
 
@@ -496,7 +496,7 @@ export function TerevitaLanding() {
               Ter ao seu lado um especialista significa antecipar riscos, aproveitar oportunidades e tomar decisões com serenidade. Especialmente em momentos de mudanças tributárias e sucessórias, planejamento não é luxo — é inteligência.
             </p>
           </div>
-          
+
           <div className="mx-auto mt-12 max-w-2xl rounded-3xl bg-[#3b2e22] px-6 py-10 text-center shadow-lg md:px-12">
             <h3 className={`${serif.className} text-3xl tracking-widest text-[#f4ebd8]`}>
               TEREVITA
@@ -617,7 +617,7 @@ export function TerevitaLanding() {
       <section id="faq" className="scroll-mt-28 px-5 pb-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8f7445]">FAQ</p>
-          <h2 className={`${serif.className} mt-2 text-4xl text-[#3d2410] md:text-5xl`}>Perguntas que ajudam a fechar a conversa.</h2>
+          <h2 className={`${serif.className} mt-2 text-4xl text-[#3d2410] md:text-5xl`}>Esclareça suas dúvidas com transparência.</h2>
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
             {faq.map((item) => (
               <article key={item.q} className="rounded-[30px] border border-[#dcc8a0] bg-white/85 p-6 shadow-sm">
