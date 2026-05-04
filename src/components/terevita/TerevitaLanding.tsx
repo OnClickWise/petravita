@@ -279,7 +279,9 @@ export function TerevitaLanding() {
       });
 
       setSuccess('Lead enviado com sucesso. Em breve o time entra em contato.');
-      event.currentTarget.reset();
+      if (event.currentTarget) {
+        event.currentTarget.reset();
+      }
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : 'Falha ao enviar o contato.');
     } finally {
